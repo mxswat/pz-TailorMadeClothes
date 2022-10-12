@@ -1,0 +1,16 @@
+module TailorMadeClothes {
+	imports	{
+		Base
+	}
+
+	item BodyMeasurements
+    {
+        DisplayCategory = Literature,
+        Weight	=	0.2,
+        Type	=	Normal,
+        DisplayName	=	Measures,
+        Icon	=	MagazineNudie1,
+        StaticModel = Magazine,
+        WorldStaticModel = MagazineOpenGround,
+    }
+}

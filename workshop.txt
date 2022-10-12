@@ -1,0 +1,5 @@
+version=1
+title=Tailor Made Clothes
+description=This is the description of Tailor Made Clothes.
+tags=
+visibility=public
