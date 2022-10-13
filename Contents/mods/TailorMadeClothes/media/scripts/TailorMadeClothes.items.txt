@@ -3,14 +3,47 @@ module TailorMadeClothes {
 		Base
 	}
 
+    item TailorMade {
+        DisplayCategory = Literature,
+        Weight	=	0.2,
+        Type	=	Normal,
+        DisplayName	= Tailor-Made Clothing,
+        StaticModel = Magazine,
+        WorldStaticModel = MagazineOpenGround,
+    }
+
 	item BodyMeasurements
     {
         DisplayCategory = Literature,
-        Weight	=	0.2,
+        Weight	=	0.01,
         Type	=	Normal,
         DisplayName	=	Measures,
         Icon	=	MagazineNudie1,
         StaticModel = Magazine,
         WorldStaticModel = MagazineOpenGround,
+    }
+
+    recipe Make Clothing Tailor-Made
+  	{
+        keep [GetClothingToTailorMade],
+        keep TailorMadeClothes.BodyMeasurements,
+
+        Result:TailorMade,
+        OnCreate:OnCreateTailorMadeClothing,
+        RemoveResultItem:true,
+        Time:200.0,
+        AnimNode:Craft,	   	   
+        Category:Tailoring,
+    }
+    
+    recipe Take Self Body Measurements
+  	{
+        keep RippedSheets,
+
+        Result:BodyMeasurements,
+        OnCreate:OnCreateSelfBodyMeasurement,
+        Time:200.0,
+        AnimNode:Craft,	   	   
+        Category:Tailoring,
     }
 }
