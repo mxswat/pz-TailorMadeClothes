@@ -5,7 +5,7 @@ function ISToolTipInv:render()
     if self.item == nil or not self.item:IsClothing() or self.item:getModData()["bodyMeasurementsID"] == nil then
         return old_ISToolTipInv_render(self)
     end
-    local tailorText = "Tailor-Made for: "..self.item:getModData()["bodyMeasurementsID"]
+    local tailorText = "Tailor-Made for: " .. self.item:getModData()["bodyMeasurementsID"]
     local numRows = 1 -- Cause it's just one row, duh
     local stage = 1
     local old_y = 0

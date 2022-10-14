@@ -17,8 +17,8 @@ module TailorMadeClothes {
         DisplayCategory = Literature,
         Weight	=	0.01,
         Type	=	Normal,
-        DisplayName	=	Measures,
-        Icon	=	MagazineNudie1,
+        DisplayName	=	Body Measurements,
+        Icon	=	BodyMeasurements,
         StaticModel = Magazine,
         WorldStaticModel = MagazineOpenGround,
     }
@@ -27,18 +27,23 @@ module TailorMadeClothes {
   	{
         keep [GetClothingToTailorMade],
         keep TailorMadeClothes.BodyMeasurements,
+        keep [Recipe.GetItemTypes.SewingNeedle],
+        keep [Recipe.GetItemTypes.Scissors],
+        Thread=1,
 
         Result:TailorMade,
         OnCreate:OnCreateTailorMadeClothing,
         RemoveResultItem:true,
-        Time:200.0,
+        Time: 300.0,
+        SkillRequired:Tailoring=3,
+        OnGiveXP:TMCGiveTailoringXP,
         AnimNode:Craft,	   	   
         Category:Tailoring,
     }
     
     recipe Take Self Body Measurements
   	{
-        keep RippedSheets,
+        keep TapeMeasure,
 
         Result:BodyMeasurements,
         OnCreate:OnCreateSelfBodyMeasurement,
@@ -46,4 +51,23 @@ module TailorMadeClothes {
         AnimNode:Craft,	   	   
         Category:Tailoring,
     }
+
+    item TapeMeasure
+    {
+        DisplayCategory = Tool,
+        Type	            =	        Normal,
+        DisplayName			=		    Tape Measure,
+        Icon				=			TapeMeasure,
+        Weight				=			0.1,
+        SurvivalGear = TRUE,
+        ConsolidateOption = ContextMenu_Merge,
+        WorldStaticModel = TapeMeasure,
+    }
+
+    model TapeMeasure
+	{
+		mesh = WorldItems/TapeMeasure,
+		texture = WorldItems/TapeMeasure,
+		scale = 0.4,
+	}
 }

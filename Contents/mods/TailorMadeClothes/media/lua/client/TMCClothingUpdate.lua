@@ -14,8 +14,8 @@ local function loopIt(player, item)
         item:setCombatSpeedModifier(item:getScriptItem().combatSpeedModifier);
         return
     end
-    item:setRunSpeedModifier(1);
-    item:setCombatSpeedModifier(1);
+    item:setRunSpeedModifier(math.max(item:getRunSpeedModifier(), 1));
+    item:setCombatSpeedModifier(math.max(item:getCombatSpeedModifier(), 1));
 end
 
 local function onClothingUpdated(player)
@@ -26,7 +26,7 @@ local function onClothingUpdated(player)
 
     local size = wornItems:size() - 1
     for i = 0, size do
-        local item = wornItems:getItems():get(i);
+        local item = wornItems:getItemByIndex(i);
         loopIt(player, item)
     end
 end

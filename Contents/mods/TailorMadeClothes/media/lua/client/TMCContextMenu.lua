@@ -2,7 +2,6 @@
 ---@diagnostic disable-next-line: lowercase-global
 clickedPlayer = nil;
 
-MxTMC = MxTMC or {}
 
 function TMConTakeMeasures(worldobjects, player, otherPlayer)
     if luautils.walkAdj(player, otherPlayer:getCurrentSquare()) then
@@ -19,8 +18,14 @@ function TMCOnFillWorldObjectContextMenu(player, context, worldobjects, test)
     end
 
     if clickedPlayer and clickedPlayer ~= playerObj then
-        local text = getText("ContextMenu_TakeMeasures")..clickedPlayer:getUsername()
+        local text = getText("ContextMenu_TakeMeasures", clickedPlayer:getDisplayName())
         local option = context:addOption(text, worldobjects, TMConTakeMeasures, playerObj, clickedPlayer)
+        if not playerObj:getInventory():getItemFromType('TailorMadeClothes.TapeMeasure', true, true) then
+            local tooltip = ISWorldObjectContextMenu.addToolTip();
+            option.notAvailable = true;
+            tooltip.description = getText("ContextMenu_MissingMeasureTape");
+            option.toolTip = tooltip;
+        end
         if math.abs(playerObj:getX() - clickedPlayer:getX()) > 2 or math.abs(playerObj:getY() - clickedPlayer:getY()) > 2 then
             local tooltip = ISWorldObjectContextMenu.addToolTip();
             option.notAvailable = true;

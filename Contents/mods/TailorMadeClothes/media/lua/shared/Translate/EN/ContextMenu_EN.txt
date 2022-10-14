@@ -1,3 +1,4 @@
 ContextMenu_EN = {
-    ContextMenu_TakeMeasures = "Take Measures of ",
+    ContextMenu_TakeMeasures = "Take Measures of %1",
+    ContextMenu_MissingMeasureTape = "Missing Measure Tape",
 }
