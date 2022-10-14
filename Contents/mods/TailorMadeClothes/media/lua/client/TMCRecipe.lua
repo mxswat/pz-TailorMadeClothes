@@ -37,7 +37,7 @@ function OnCreateSelfBodyMeasurement(inputItems, resultItem, player)
     itemModData["bodyMeasurementsID"] = GetBodyMeasurementsID(player)
 
     local MAXIMUM_RENAME_LENGTH = 28
-    local name = "Measurement of " .. player:getUsername()
+    local name = "Measurements of " .. player:getUsername()
     resultItem:setName(string.sub(name, 1, MAXIMUM_RENAME_LENGTH));
 end
 

@@ -42,7 +42,7 @@ local MAXIMUM_RENAME_LENGTH = 28
 function TMCMeasuresAction:perform()
     local bodyMeasurementsItem = self.character:getInventory():AddItem("TailorMadeClothes.BodyMeasurements")
 
-    local name = "Measurement of " .. self.otherPlayer:getUsername()
+    local name = "Measurements of " .. self.otherPlayer:getUsername()
 
     bodyMeasurementsItem:setName(string.sub(name, 1, MAXIMUM_RENAME_LENGTH));
 
