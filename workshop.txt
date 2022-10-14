@@ -1,5 +1,8 @@
 version=1
+id=2875224327
 title=Tailor Made Clothes
+description=Check the video for a quick exampe
+description=
 description=This mod allows you to remove the Running Speed and Compact Speed debuffs from any clothing that has it.
 description=
 description=You will need tailoring 3 and you will need to find a new item, the measuring tape.
@@ -13,5 +16,5 @@ description=Once you have made a tailor-made clothing you will gain 15 tailoring
 description=
 description=Note: Hold in your inventory only one "Measurements of X" items, otherwise the game will randomly pick one
 description=Note 2: The tooltip is updated once you wear the Tailor-made item
-tags=
+tags=Build 41;Balance;Clothing/Armor;Items;Misc;Models;Realistic
 visibility=public
