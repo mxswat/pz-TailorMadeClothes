@@ -29,6 +29,7 @@ module TailorMadeClothes {
         keep TailorMadeClothes.BodyMeasurements,
         keep [Recipe.GetItemTypes.SewingNeedle],
         keep [Recipe.GetItemTypes.Scissors],
+        keep TapeMeasure,
         Thread=1,
 
         Result:TailorMade,
